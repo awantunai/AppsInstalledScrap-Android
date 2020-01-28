@@ -9,7 +9,7 @@ import android.telephony.TelephonyManager
 import com.awantunai.appsintalledscrap.model.ApplicationsItem
 import com.awantunai.appsintalledscrap.model.DeviceInfoRequest
 
-fun getInstalledApllication(packageManager : PackageManager?, context : Context) : MutableList<ApplicationsItem>{
+fun getInstalledApllication(packageManager : PackageManager?, context : Context) : MutableList<Any>{
 
     var appList : MutableList<ApplicationsItem> = mutableListOf()
     val apps = packageManager?.getInstalledApplications(0)
@@ -28,7 +28,7 @@ fun getInstalledApllication(packageManager : PackageManager?, context : Context)
 
         appList.add(index, ApplicationsItem(label.toString(), installed.toString()))
     }
-    return appList
+    return appList.toMutableList()
 }
 
 @SuppressLint("MissingPermission")
