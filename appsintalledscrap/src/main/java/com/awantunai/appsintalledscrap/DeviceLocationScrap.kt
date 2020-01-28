@@ -13,20 +13,23 @@ private var lat  = ""
 private var long = ""
 private var radius  = ""
 
-fun getDeviceLocation(locationManager: LocationManager?, tm : TelephonyManager) : DeviceLocationRequest{
+
+
+fun getDeviceLocation(locationManager: LocationManager?) : Location?{
     try {
         locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, loacationListener)
     } catch(ex: SecurityException) {
         Log.d("myTag", "Security Exception, no location available")
     }
-    return DeviceLocationRequest(lat, long, radius)
+    return LocationApps.currentLocation.location
 }
 
 private val loacationListener : LocationListener = object : LocationListener{
-    override fun onLocationChanged(location: Location) {
-        lat = location.latitude.toString()
-        long = location.longitude.toString()
-        radius = location.accuracy.toString()
+        override fun onLocationChanged(location: Location) {
+            lat = location.latitude.toString()
+            long = location.longitude.toString()
+            radius = location.accuracy.toString()
+            LocationApps.currentLocation.location = location
         //deviceLocationRequest = DeviceLocationRequest(long, lat, radius)
     }
     override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}

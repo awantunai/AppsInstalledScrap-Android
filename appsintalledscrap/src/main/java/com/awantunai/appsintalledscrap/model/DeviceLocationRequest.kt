@@ -1,7 +1,7 @@
 package com.awantunai.appsintalledscrap.model
 
+import android.location.Location
+
 data class DeviceLocationRequest(
-	val longitude: String? = null,
-	val latitude: String? = null,
-	val radius: String? = null
+	var location: Location? = null
 )
