@@ -1,4 +1,4 @@
-<p style="text-align:center;"><img src="https://user-images.githubusercontent.com/17407370/73429792-0f93d980-436f-11ea-9869-a1f53edba8fb.png" width="400px" align="top|middle"/></p>
+<img src="https://user-images.githubusercontent.com/17407370/73429792-0f93d980-436f-11ea-9869-a1f53edba8fb.png" width="400px" align="top|middle"/>
 
 # Scraping Apps Installed, Device Location and Device Info
 
