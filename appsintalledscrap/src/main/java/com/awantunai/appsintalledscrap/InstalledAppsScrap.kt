@@ -28,7 +28,7 @@ fun getInstalledApllication(packageManager : PackageManager?, context : Context)
 
         appList.add(index, ApplicationsItem(label.toString(), installed.toString()))
     }
-    return appList.toMutableList()
+    return appList
 }
 
 @SuppressLint("MissingPermission")
