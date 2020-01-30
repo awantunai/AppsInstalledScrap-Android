@@ -6,12 +6,12 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Build
 import android.telephony.TelephonyManager
-import com.awantunai.appsintalledscrap.model.ApplicationsItem
+import com.awantunai.appsintalledscrap.model.ApplicationsItemRequest
 import com.awantunai.appsintalledscrap.model.DeviceInfoRequest
 
-fun getInstalledApllication(packageManager : PackageManager?, context : Context) : MutableList<ApplicationsItem>{
+fun getInstalledApllication(packageManager : PackageManager?, context : Context) : MutableList<ApplicationsItemRequest> {
 
-    var appList : MutableList<ApplicationsItem> = mutableListOf()
+    var appList : MutableList<ApplicationsItemRequest> = mutableListOf()
     val apps = packageManager?.getInstalledApplications(0)
     val installedApps = ArrayList<ApplicationInfo>()
     apps?.forEachIndexed{ index, element ->
@@ -26,7 +26,7 @@ fun getInstalledApllication(packageManager : PackageManager?, context : Context)
             .getPackageInfo(element.packageName, 0)
             .firstInstallTime
 
-        appList.add(index, ApplicationsItem(label.toString(), installed.toString()))
+        appList.add(index, ApplicationsItemRequest(label.toString(), installed.toString()))
     }
     return appList
 }
