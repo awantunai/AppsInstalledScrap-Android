@@ -9,7 +9,7 @@ import android.telephony.TelephonyManager
 import com.awantunai.appsintalledscrap.model.ApplicationsItem
 import com.awantunai.appsintalledscrap.model.DeviceInfoRequest
 
-fun getInstalledApllication(packageManager : PackageManager?, context : Context) : MutableList<Any>{
+fun getInstalledApllication(packageManager : PackageManager?, context : Context) : MutableList<ApplicationsItem>{
 
     var appList : MutableList<ApplicationsItem> = mutableListOf()
     val apps = packageManager?.getInstalledApplications(0)
