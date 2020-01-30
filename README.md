@@ -1,5 +1,7 @@
 # Scraping Apps Installed, Device Location and Device Info
 
+The project is only for internal needs in Awan Tunai
+
 
 Setup
 ------
