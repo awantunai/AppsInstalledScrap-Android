@@ -36,20 +36,15 @@ fun getInstalledApllication(packageManager : PackageManager?, context : Context)
     return appList
 }
 
-@SuppressLint("MissingPermission")
-fun getDeviceInfo(id : String, telephonyManager: TelephonyManager) : DeviceInfoRequest {
-    var imei = ""
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        imei = telephonyManager.imei
-    } else {
-        imei = telephonyManager.deviceId
-    }
+
+fun getDeviceInfo(id : String, gaId : String) : DeviceInfoRequest {
+
     val brand = Build.BRAND
     val manufacturer = Build.MANUFACTURER
     val model = Build.MODEL
     val os = Build.VERSION.RELEASE
 
-    return DeviceInfoRequest(id, 0, imei, manufacturer, model, brand, os)
+    return DeviceInfoRequest(id, 0, gaId, manufacturer, model, brand, os)
 }
 
 @SuppressLint("MissingPermission")
