@@ -20,6 +20,7 @@ fun getInstalledApllication(packageManager : PackageManager?, context : Context)
             }else -> installedApps.add(element)
         }
         val label = packageManager.getApplicationLabel(element)
+        val packages = element.packageName
         val installed = context
             .packageManager
             .getPackageInfo(element.packageName, 0)
@@ -27,6 +28,7 @@ fun getInstalledApllication(packageManager : PackageManager?, context : Context)
 
         appList.add(index, ApplicationsItemRequest(
                 label.toString(),
+                packages.toString(),
                 installed.toString()
             )
         )
